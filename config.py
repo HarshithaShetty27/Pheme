@@ -16,12 +16,28 @@ RSS_FEEDS = [
     {"url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "tag": "The Verge AI"},
     {"url": "https://www.technologyreview.com/topic/artificial-intelligence/feed", "tag": "MIT Tech Review"},
     {"url": "https://arstechnica.com/ai/feed/", "tag": "Ars Technica AI"},
+    {"url": "https://www.wired.com/feed/tag/ai/latest/rss", "tag": "Wired AI"},
+    {"url": "https://venturebeat.com/category/ai/feed/", "tag": "VentureBeat AI"},
 
     # Developer-focused
     {"url": "https://github.blog/feed/", "tag": "GitHub Blog"},
     {"url": "https://devblogs.microsoft.com/ai/feed/", "tag": "Microsoft AI"},
     {"url": "https://huggingface.co/blog/feed.xml", "tag": "Hugging Face"},
 ]
+
+# Reddit - public JSON API, no auth needed
+REDDIT_SUBS = [
+    {"sub": "LocalLLaMA", "tag": "r/LocalLLaMA"},
+    {"sub": "MachineLearning", "tag": "r/MachineLearning"},
+    {"sub": "singularity", "tag": "r/singularity"},
+    {"sub": "ChatGPT", "tag": "r/ChatGPT"},
+    {"sub": "artificial", "tag": "r/artificial"},
+    {"sub": "ArtificialInteligence", "tag": "r/ArtificialInteligence"},
+]
+REDDIT_TOP_N = 10  # top posts per sub
+
+# Product Hunt - tech launches
+PRODUCTHUNT_RSS = "https://www.producthunt.com/feed"
 
 # arXiv categories to search
 ARXIV_CATEGORIES = ["cs.AI", "cs.LG", "cs.CL"]
@@ -32,7 +48,7 @@ HN_TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 HN_ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/{}.json"
 HN_TOP_N = 50  # check top 50 stories for AI relevance
 
-# AI keywords for filtering HN stories
+# AI keywords for filtering HN, Reddit, Product Hunt
 AI_KEYWORDS = [
     "ai", "artificial intelligence", "machine learning", "deep learning",
     "llm", "large language model", "gpt", "claude", "anthropic", "openai",
@@ -49,3 +65,6 @@ AI_KEYWORDS = [
 
 # How many hours back to look for news (25h to avoid gaps)
 LOOKBACK_HOURS = 25
+
+# Weekend recap looks back over the full week
+WEEKLY_LOOKBACK_HOURS = 170  # ~7 days
